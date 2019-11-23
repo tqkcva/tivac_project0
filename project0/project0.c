@@ -77,15 +77,15 @@ main(void)
     //
     // Enable and wait for the port to be ready for access
     //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOG);
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOG))
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
     {
     }
     
     //
     // Configure the GPIO port for the LED operation.
     //
-    GPIOPinTypeGPIOOutput(GPIO_PORTG_BASE, USER_LED);
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, USER_LED);
 
     //
     // Loop Forever
@@ -95,7 +95,7 @@ main(void)
         //
         // Turn on the LED
         //
-        GPIOPinWrite(GPIO_PORTG_BASE, USER_LED, USER_LED);
+        GPIOPinWrite(GPIO_PORTF_BASE, USER_LED, USER_LED);
 
         //
         // Delay for a bit
@@ -105,7 +105,7 @@ main(void)
         //
         // Turn on the LED
         //
-        GPIOPinWrite(GPIO_PORTG_BASE, USER_LED, ~(USER_LED));
+        GPIOPinWrite(GPIO_PORTF_BASE, USER_LED, ~(USER_LED));
 
         //
         // Delay for a bit
